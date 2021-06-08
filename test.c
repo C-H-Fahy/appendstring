@@ -5,11 +5,9 @@ char * appendstr(char *a, char *b, int asize, int bsize, char *c){
     asize = asize-1;
     bsize = bsize-1;
     for(int i = 0; i < asize; i++){
-        c[i] = a[i];
         printf("%x\n", a[i]);
     }
     for(int i = 0; i <= bsize; i++){
-        printf("%x\n", b[i]);
         c[i + asize] = b[i];
     }
     return(c);
