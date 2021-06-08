@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 char * append(char *a, char *b, int asize, int bsize, char *c){
+    //appends two strings together
     asize = asize-1;
     bsize = bsize-1;
     for(int i = 0; i <= asize; i++){
