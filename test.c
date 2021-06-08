@@ -1,15 +1,16 @@
 #include <stdio.h>
 
-char * append(char *a, char *b, int asize, int bsize, char *c){
+char * appendstr(char *a, char *b, int asize, int bsize, char *c){
     //appends two strings together
     asize = asize-1;
     bsize = bsize-1;
-    for(int i = 0; i <= asize; i++){
+    for(int i = 0; i < asize; i++){
         c[i] = a[i];
+        printf("%x\n", a[i]);
     }
     for(int i = 0; i <= bsize; i++){
+        printf("%x\n", b[i]);
         c[i + asize] = b[i];
-
     }
     return(c);
     
@@ -17,8 +18,8 @@ char * append(char *a, char *b, int asize, int bsize, char *c){
 int main(void){
     char a[] = "foo";
     char b[] = "bar";
-    char c[sizeof(a) + sizeof(b)];
-    append(a, b, sizeof(a), sizeof(b), c);
+    char c[sizeof(a) + sizeof(b) - 1];
+    appendstr(a, b, sizeof(a), sizeof(b), c);
     printf("%s\n", c);
     return(0);
 }
